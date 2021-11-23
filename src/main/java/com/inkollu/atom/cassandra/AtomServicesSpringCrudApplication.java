@@ -2,21 +2,27 @@ package com.inkollu.atom.cassandra;
 
 import com.akash.atom.CassandraAccess;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.inkollu.atom.cassandra", "com.akash.atom"})
-public class AtomServicesSpringCrudApplication {
+public class AtomServicesSpringCrudApplication implements CommandLineRunner {
     @Autowired
-    public static ApplicationContext applicationContext;
+    public ApplicationContext applicationContext;
 
     public static void main(String[] args) {
-        new CassandraAccess(applicationContext);
         SpringApplication.run(AtomServicesSpringCrudApplication.class, args);
     }
 
+
+    @Override
+    public void run(String... args) throws Exception {
+        new CassandraAccess(applicationContext);
+    }
 }

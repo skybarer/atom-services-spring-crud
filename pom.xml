@@ -97,10 +97,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.akash.atom</groupId>
-			<artifactId>atom.common.webconfig</artifactId>
-			<version>1.1.0.RELEASE</version>
+			<artifactId>guava</artifactId>
+			<groupId>com.google.guava</groupId>
+			<type>jar</type>
+			<version>15.0</version>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>com.akash.atom</groupId>-->
+<!--			<artifactId>atom.common.webconfig</artifactId>-->
+<!--			<version>1.1.0.RELEASE</version>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
